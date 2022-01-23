@@ -11,17 +11,18 @@ const Navbar = () => {
           <Icon name="arrowDown" />
         </div>
         <div className={styles.radio}>
-            
-        </div>
+              console.log("           ")
+    <hsfbh>             </djkjf>
+      </div>
         <div className={styles.user}>
           <Icon name="logo" />
-          <p>Vamoss</p>
+          <p>Vamosssssssss</p>
           <Icon name="arrowDown" />
       </div>
       <div>
         kfjdf
         ln kv
-        
+
       </div>
     </div>
   )
