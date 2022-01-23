@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-max-props-per-line */
 import React from "react";
 import styles from "./Greetings.module.scss";
 import Typography from "@mui/material/Typography";

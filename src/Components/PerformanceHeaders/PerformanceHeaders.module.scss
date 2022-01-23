@@ -1,0 +1,21 @@
+@import '../../Assets//styles/shared-styles.scss';
+.performanceWrapper{
+    &__titles{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 15%;
+        height: to-rem(40);
+        h6 {
+            color: #5F5F8C;
+            font-size: 13px;
+            line-height: 170%;
+        }
+        .active {
+            color: #1E1E2F;
+            border-bottom: to-rem(4) solid #585ADF;
+            cursor: pointer;
+            line-height: 4;
+        }
+    }
+}
