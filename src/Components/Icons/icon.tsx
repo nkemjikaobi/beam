@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 /**
  * Icon component to get and render app icons
  * @param {Object} props Component properties
