@@ -15,9 +15,14 @@ const Navbar = () => {
         </div>
         <div className={styles.user}>
           <Icon name="logo" />
-          <p>Orangeboat</p>
+          <p>Vamoss</p>
           <Icon name="arrowDown" />
-        </div>
+      </div>
+      <div>
+        kfjdf
+        ln kv
+        
+      </div>
     </div>
   )
 };
