@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React, { useState, useEffect } from "react";
 import styles from "./PerformanceFeedBack.module.scss";
 import { PerformanceData } from "../../Constants";
@@ -8,11 +9,13 @@ import CurrentYear from "../CurrentYear/CurrentYear";
 import useClickOutside from "../../CustomHooks/useClickOutSide";
 
 const PerformanceFeedBack = () => {
-  const [showDropDown, setShowDropDown] = useState(false);
+  const [showDropDown, setShowDropDown] = useState<boolean>(false);
   const [currentYear, setCurrentYear] = useState<number>();
   const [length, setLength] = useState<number>(0);
   const [yearsToShow, setYearsToShow] = useState<Array<any>>([]);
-  const years = (startYear?: any) => {
+
+  //The function below is to get years from 1990 - present
+  const years = (startYear?: number) => {
     const currentYear = new Date().getFullYear(),
       years = [];
     startYear = startYear || 1990;
@@ -21,18 +24,25 @@ const PerformanceFeedBack = () => {
     }
     return years;
   };
-  const nextYear = (year: any) => {
+
+  //Get the next year
+  const nextYear = (year: number) => {
     if (year !== yearsToShow[yearsToShow.length - 1]) {
       setCurrentYear(year + 1);
     }
   };
-  const previousYear = (year: any) => {
+
+  //Get the previous year
+  const previousYear = (year: number) => {
     if (year !== yearsToShow[0]) {
       setCurrentYear(year - 1);
     }
   };
 
   const monthData = ["January", "February", "March", "April"];
+
+  //Ref Node to detect any click outside the parent element.
+  //A custom hook was created to listen to changes in dom node.
   const dropdownNode = useClickOutside(() => {
     setShowDropDown(false);
   });
@@ -61,35 +71,41 @@ const PerformanceFeedBack = () => {
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <p>Your performance feedback</p>
-        <div
-          className={styles.date}
-          onClick={() => setShowDropDown(!showDropDown)}
-          ref={dropdownNode}
-        >
-          <p>April 2020</p>
-          <Icon name="arrowDown" />
+        <div>
+          <div
+            className={styles.date}
+            onClick={() => setShowDropDown(!showDropDown)}
+          >
+            <p>April {currentYear}</p>
+            <Icon name="arrowDown" />
+          </div>
         </div>
+        {showDropDown && (
+          <div className={styles.dropdown} ref={dropdownNode}>
+            <div className={styles.dropdown_date}>
+              <p>April {currentYear}</p>
+            </div>
+            <div className={styles.customDatePickerWrapper}>
+              <CurrentYear
+                currentYear={currentYear}
+                nextYear={nextYear}
+                previousYear={previousYear}
+              />
+            </div>
+            <div className={styles.customDatePickerWrapper}>
+              {monthData &&
+                monthData.map((month) => (
+                  <CustomDatePicker
+                    currentYear={currentYear}
+                    key={month} //month was used because index can be problematic in the future
+                    month={month}
+                  />
+                ))}
+            </div>
+          </div>
+        )}
       </div>
-      {showDropDown && (
-        <div className={styles.dropdown}>
-          <div className={styles.dropdown_date}>
-            <p>April 2020</p>
-          </div>
-          <div className={styles.customDatePickerWrapper}>
-            <CurrentYear
-              currentYear={currentYear}
-              nextYear={nextYear}
-              previousYear={previousYear}
-            />
-          </div>
-          <div className={styles.customDatePickerWrapper}>
-            {monthData &&
-              monthData.map((e, i) => (
-                <CustomDatePicker currentYear={currentYear} key={e} month={e} />
-              ))}
-          </div>
-        </div>
-      )}
+
       <hr />
       <div className={styles.horizontalWrapper}>
         <p>Values</p>
@@ -110,7 +126,7 @@ const PerformanceFeedBack = () => {
               >
                 {data.id === 2 && (
                   <div className={styles.average}>
-                    <p>April 2020</p>
+                    <p>April {currentYear}</p>
                     <p>3.5</p>
                   </div>
                 )}
