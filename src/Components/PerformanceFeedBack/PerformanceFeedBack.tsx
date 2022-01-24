@@ -24,29 +24,39 @@ const PerformanceFeedBack = () => {
         </div>
       </div>
       <hr />
-      <div className={styles.body}>
-        {PerformanceData.map((data: IPerformance) => {
-          return (
-            <div
-              className={styles.item}
-              key={data.id}
-              style={{
-                backgroundColor: `${data.backgroundColor}`,
-                color: `${data.textColor}`,
-                border: `3px solid ${data.backgroundColor}`,
-              }}
-            >
-              <div>
-                <Icon name={data.firstIcon} />
-                <p>{data.firstText}</p>
+      <div className={styles.horizontalWrapper}>
+        <p>Values</p>
+        <Icon name="horizontalRule" />
+      </div>
+      <div className={styles.bodyWrapper}>
+        <div className={styles.body}>
+          {PerformanceData.map((data: IPerformance) => {
+            return (
+              <div
+                className={styles.item}
+                key={data.id}
+                style={{
+                  backgroundColor: `${data.backgroundColor}`,
+                  color: `${data.textColor}`,
+                  border: `3px solid ${data.backgroundColor}`,
+                }}
+              >
+                <div>
+                  <Icon name={data.firstIcon} />
+                  <p>{data.firstText}</p>
+                </div>
+                <div>
+                  <Icon name={data.secondIcon} />
+                  <p>{data.secondText}</p>
+                </div>
               </div>
-              <div>
-                <Icon name={data.secondIcon} />
-                <p>{data.secondText}</p>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+        <div className={styles.productivityWrappper}>
+          <Icon name="verticalRule" />
+          <p>Productivity</p>
+        </div>
       </div>
     </div>
   );

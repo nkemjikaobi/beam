@@ -4,4 +4,7 @@
     font-weight : $font-weight-dense;
     line-height : 130%;
     color : #1E1E2F;
+    @include breakpoint("s"){
+        margin-top: 4rem;
+    }
 }

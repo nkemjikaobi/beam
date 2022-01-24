@@ -3,20 +3,76 @@
     border: 2px solid #c2c2c7;
     width: to-rem(607);
     border-radius: to-rem(5);
+    @include breakpoint("m"){
+        width: 30%;
+    }
+    @include breakpoint("s"){
+        width: 100%;
+    }
     .header{
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1rem;
+        @include breakpoint("m"){
+            flex-direction: column;
+            p{
+                font-size: to-rem(13);
+            }
+            div{
+                margin-top: 1rem;
+            }
+        }
+        @include breakpoint("s"){
+            flex-direction: row;
+        }
+    }
+.horizontalWrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+    p{
+        font-style: normal;
+        font-weight: $font-weight-regular;
+        font-size: to-rem(14);
+        line-height: 146%;
+        display: flex;
+        align-items: center;
+        color: #5F5F8C;
+    }
+}
+    .bodyWrapper{
+        display: flex;
+        .productivityWrappper{
+            margin-top: 2.7rem;
+            p{
+                width: 30%;
+                margin-top: 10px;
+                transform: rotate(90deg);
+                font-style: normal;
+                font-weight: $font-weight-regular;
+                font-size: to-rem(14);
+                line-height: 146%;
+                display: flex;
+                align-items: center;
+                color: #5F5F8C;
+            }
+        }
+     
     }
     .body {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        margin-top: 3rem;
+        margin-top: 2rem;
         background-color: transparent;
 
+        @include breakpoint("s"){
+            margin-top: 1rem;
+        }
+        
         .item {
             display: flex;
             justify-content: center;
@@ -27,6 +83,13 @@
             border-radius: to-rem(10 0 0 0);
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
+            @include breakpoint("m"){
+                width: 12rem;
+                height: 10rem;
+            }
+            @include breakpoint("s"){
+                width: 90%;
+            }
             div:first-child {
                 margin-left: to-rem(-35);
                 margin-bottom: 0.5rem;

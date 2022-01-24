@@ -6,6 +6,13 @@
     display: flex;
     padding: 1rem;
     flex-direction: column;
+    @include breakpoint("m"){
+        width: 60%;
+    }
+    @include breakpoint("s"){
+        width: 90%;
+        margin-top: 1rem;
+    }
     .header {
         display: flex;
         justify-content: space-between;
@@ -15,6 +22,9 @@
         padding : 1rem;
         width: to-rem(454);
         height: to-rem(48);
+        @include breakpoint("m"){
+            width: 90%;
+        }
         p {
             font-weight: $font-weight-dense;
             font-size: $font-size-medium;
@@ -49,10 +59,16 @@
                 text-align: left;
                 font-size: to-rem(15);
                 margin-bottom: 1.5rem;
+                @include breakpoint("s"){
+                    margin-bottom: 1rem;
+                }
             }
             p {
                 color: #5F5F8C;
                 margin-bottom: 1.5rem;
+                @include breakpoint("s"){
+                    font-size: to-rem(13);
+                }
             }
         }
         

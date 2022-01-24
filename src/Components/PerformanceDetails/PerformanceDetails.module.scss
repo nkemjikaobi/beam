@@ -1,4 +1,7 @@
 @import '../../Assets//styles/shared-styles.scss';
 .wrapper {
     display: flex;
+    @include breakpoint("s"){
+        flex-direction: column;
+    }
 }

@@ -28,6 +28,9 @@
         border-radius: to-rem(70);
         font-weight: $font-weight-bold;
         color: #5F5F8C;
+        @include breakpoint("s"){
+            height: 2.5rem;
+        }
         .active{
             background-color: color(White);
             width: to-rem(81);
@@ -37,6 +40,13 @@
             align-items: center;
             justify-content: center;
             color: color(Purple);
+            @include breakpoint("s"){
+                width: 5.0625rem;
+                height: 2.5rem;
+            }
+        }
+        @include breakpoint("s"){
+            font-size: to-rem(11);
         }
     }
 

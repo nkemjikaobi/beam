@@ -6,6 +6,9 @@
         align-items: center;
         width: 15%;
         height: to-rem(40);
+        @include breakpoint("s"){
+            width: 40%;
+        }
         h6 {
             color: #5F5F8C;
             font-size: 13px;
