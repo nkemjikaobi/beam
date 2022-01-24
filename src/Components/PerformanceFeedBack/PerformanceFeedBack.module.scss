@@ -1,8 +1,9 @@
 @import '../../Assets//styles/shared-styles.scss';
 .wrapper {
-    border: 2px solid #c2c2c7;
+    border: 1px solid #EDEDF2;
     width: to-rem(607);
     border-radius: to-rem(5);
+    position: relative;
     @include breakpoint("m"){
         width: 30%;
     }
@@ -14,6 +15,20 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem;
+        .date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #CECEDE;
+            border-radius: to-rem(7);
+            padding: 1rem;
+            width: to-rem(152);
+            height: to-rem(40);
+            cursor: pointer;
+            p{
+                color: color(Black);
+            }
+        }
         @include breakpoint("m"){
             flex-direction: column;
             p{
@@ -26,6 +41,37 @@
         @include breakpoint("s"){
             flex-direction: row;
         }
+    }
+    .dropdown {
+        width: to-rem(201);
+        height: to-rem(268);
+        border: 1px solid #CECEDE;
+        border-radius: to-rem(10);
+        position: absolute;
+        right: to-rem(15);
+        top: to-rem(102);
+        z-index: 2;
+        background-color: #fff;
+        overflow-y: scroll;
+        &_date{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #CECEDE;
+            border-radius: to-rem(6);
+            padding: 1rem;
+            margin: 1rem;
+            width: 4.5625rem;
+            height: 0.3rem;
+        }
+        .customDatePickerWrapper{
+            border: to-rem(1) solid #CECEDE;
+            border-radius: to-rem(10 10 0 0);
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 0;
+            padding-top: to-rem(16);
+        };
     }
 .horizontalWrapper{
     display: flex;

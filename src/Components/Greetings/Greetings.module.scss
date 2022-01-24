@@ -1,9 +1,12 @@
-@import '../../Assets//styles/shared-styles.scss';
+@import '../../Assets/styles/shared-styles.scss';
 .greetings {
     margin-top: 8rem;
     font-weight : $font-weight-dense;
     line-height : 130%;
     color : #1E1E2F;
+    h5 {
+        font-family: 'Graphik';
+    }
     @include breakpoint("s"){
         margin-top: 4rem;
     }

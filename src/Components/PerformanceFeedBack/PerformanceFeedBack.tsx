@@ -1,28 +1,87 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./PerformanceFeedBack.module.scss";
-import TextField from "@mui/material/TextField";
 import { PerformanceData } from "../../Constants";
 import IPerformance from "../../dto/IPerformance";
 import Icon from "../Icons/icon";
+import CustomDatePicker from "../CustomDatePicker/CustomDatePicker";
+import CurrentYear from "../CurrentYear/CurrentYear";
 
 const PerformanceFeedBack = () => {
+  const [showDropDown, setShowDropDown] = useState(true);
+  const [currentYear, setCurrentYear] = useState<number>();
+  const [length, setLength] = useState<number>(0);
+  const [yearsToShow, setYearsToShow] = useState<Array<any>>([]);
+  const years = (startYear?: any) => {
+    const currentYear = new Date().getFullYear(),
+      years = [];
+    startYear = startYear || 1990;
+    while (startYear <= currentYear) {
+      years.push(startYear++);
+    }
+    return years;
+  };
+  const nextYear = (year: any) => {
+    if (year !== yearsToShow[yearsToShow.length - 1]) {
+      setCurrentYear(year + 1);
+    }
+  };
+  const previousYear = (year: any) => {
+    if (year !== yearsToShow[0]) {
+      setCurrentYear(year - 1);
+    }
+  };
+
+  const monthData = ["January", "Feb", "March", "Apr"];
+
+  useEffect(() => {
+    let mounted = true;
+    if (mounted) {
+      const data: any = years();
+      setYearsToShow(data);
+    }
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (yearsToShow.length > 0) {
+      setLength(yearsToShow.length - 1);
+      if (length !== 0) {
+        setCurrentYear(yearsToShow[length]);
+      }
+    }
+  }, [yearsToShow, length]);
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <p>Your performance feedback</p>
-        <div>
-          <TextField
-            defaultValue="2021-05-24"
-            id="date"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            label="Month"
-            sx={{ width: 220 }}
-            type="date"
-          />
+        <div className={styles.date}>
+          <p>April 2020</p>
+          <Icon name="arrowDown" />
         </div>
       </div>
+      {showDropDown && (
+        <div className={styles.dropdown}>
+          <div className={styles.dropdown_date}>
+            <p>April 2020</p>
+          </div>
+          <div className={styles.customDatePickerWrapper}>
+            <CurrentYear
+              currentYear={currentYear}
+              nextYear={nextYear}
+              previousYear={previousYear}
+            />
+          </div>
+          <div className={styles.customDatePickerWrapper}>
+            {monthData &&
+              monthData.map((e, i) => (
+                <CustomDatePicker currentYear={currentYear} key={e} month={e} />
+              ))}
+          </div>
+        </div>
+      )}
       <hr />
       <div className={styles.horizontalWrapper}>
         <p>Values</p>

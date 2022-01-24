@@ -1,0 +1,15 @@
+@import '../../Assets//styles/shared-styles.scss';
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    p{
+        color: #1E1E2F;
+        font-weight: $font-weight-bold;
+        font-size: to-rem(14);
+    }
+    .icon {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,13 @@
+@import '../../Assets/styles/shared-styles.scss';
+.wrapper {
+    width: to-rem(152);
+    height: to-rem(40);
+    border: to-rem(1) solid #EDEDF2;
+    border-radius: to-rem(7);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: to-rem(15);
+    margin-bottom: to-rem(10);
+
+}

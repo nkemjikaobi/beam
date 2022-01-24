@@ -1,11 +1,12 @@
 @import '../../Assets//styles/shared-styles.scss';
 .wrapper {
-    border: 2px solid #c2c2c7;
+    border: 1px solid #c2c2c7;
     width: to-rem(513);
     border-radius: to-rem(5);
     display: flex;
     padding: 1rem;
     flex-direction: column;
+    border-left: none;
     @include breakpoint("m"){
         width: 60%;
     }
