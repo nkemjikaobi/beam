@@ -5,8 +5,8 @@
     height: to-rem(728);
     border-radius: to-rem(5);
     display: flex;
-    justify-content: center;
     padding: 1rem;
+    flex-direction: column;
     .header {
         display: flex;
         justify-content: space-between;
@@ -42,5 +42,20 @@
                 color: #1A9E68;
             }
         }
+    }
+    .body {
+        .item {
+            margin-top: 2rem;
+            h6 {
+                text-align: left;
+                font-size: to-rem(15);
+                margin-bottom: 1.5rem;
+            }
+            p {
+                color: #5F5F8C;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
     }
 }

@@ -1,6 +1,10 @@
+/* eslint-disable react/jsx-max-props-per-line */
 import React from "react";
 import styles from "./PerformanceComments.module.scss";
 import Icon from "../Icons/icon";
+import { PerformanceCommentsData } from "../../Constants";
+import IComments from "../../dto/IComments";
+import { Typography } from "@mui/material";
 
 const PerformanceComments = () => {
   return (
@@ -13,6 +17,19 @@ const PerformanceComments = () => {
           <Icon name="greenIndicator" />
           <p>3.5%</p>
         </div>
+      </div>
+      <div className={styles.body}>
+        {PerformanceCommentsData.map((data: IComments) => {
+          return (
+            <div className={styles.item} key={data.id}>
+              <Typography component="h6" variant="h6">
+                {data.title}
+              </Typography>
+              <p>{data.body}</p>
+              <hr />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
