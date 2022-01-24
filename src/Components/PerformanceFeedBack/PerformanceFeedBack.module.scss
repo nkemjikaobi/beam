@@ -98,6 +98,11 @@
         margin-left: to-rem(30);
         margin-right: to-rem(20);
     }
+    @include breakpoint("m"){
+        svg {
+            width: 50%;
+        }
+    }
     @include breakpoint("s"){
         svg {
             width: 55%;
