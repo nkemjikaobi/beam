@@ -103,5 +103,14 @@
                 background-color: black;
             }
         }
+        p{
+            font-style: normal;
+            font-weight: $font-weight-regular;
+            font-size: to-rem(14);
+            line-height: 146%;
+            display: flex;
+            align-items: center;
+            color: #5F5F8C;
+        }
     }
 }

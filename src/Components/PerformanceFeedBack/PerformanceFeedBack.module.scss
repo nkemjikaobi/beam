@@ -32,6 +32,9 @@
     justify-content: space-around;
     align-items: center;
     margin-top: 2rem;
+    @include breakpoint("s"){
+        width: 90%;
+    }
     p{
         font-style: normal;
         font-weight: $font-weight-regular;
