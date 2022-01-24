@@ -1,1 +1,46 @@
 @import '../../Assets//styles/shared-styles.scss';
+.wrapper {
+    border: 2px solid #c2c2c7;
+    width: to-rem(513);
+    height: to-rem(728);
+    border-radius: to-rem(5);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(206, 203, 203);
+        border-radius: to-rem(7);
+        padding : 1rem;
+        width: to-rem(454);
+        height: to-rem(48);
+        p {
+            font-weight: $font-weight-dense;
+            font-size: $font-size-medium;
+            line-height: 170%;
+            display: flex;
+            align-items: center;
+            color: #1E1E2F;
+        }
+        &__right{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: color(White);
+            height: to-rem(40);
+            padding: 0.7rem;
+            border-radius: to-rem(7);
+            p:first-child {
+                font-weight: $font-weight-bold;
+            }
+            p{
+                color: gray;
+            }
+            p:last-child {
+                color: #1A9E68;
+            }
+        }
+    }
+}
