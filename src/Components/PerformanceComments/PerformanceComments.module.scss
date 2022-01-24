@@ -2,7 +2,6 @@
 .wrapper {
     border: 2px solid #c2c2c7;
     width: to-rem(513);
-    height: to-rem(728);
     border-radius: to-rem(5);
     display: flex;
     padding: 1rem;
@@ -57,5 +56,36 @@
             }
         }
         
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5rem;
+        padding: 0.5rem;
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: to-rem(7);
+            border: 1px solid #CECEDE;
+            width: to-rem(208);
+            height: to-rem(56);
+
+            div {
+                width: to-rem(40);
+                height: to-rem(40);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border : to-rem(3) solid #CECEDE;
+                background-image: url("../../Assets/images/png/profilePic.png");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: black;
+            }
+        }
     }
 }

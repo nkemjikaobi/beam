@@ -5,6 +5,7 @@ import Icon from "../Icons/icon";
 import { PerformanceCommentsData } from "../../Constants";
 import IComments from "../../dto/IComments";
 import { Typography } from "@mui/material";
+import proflePic from "../../Assets/images/png/profilePng.png";
 
 const PerformanceComments = () => {
   return (
@@ -30,6 +31,14 @@ const PerformanceComments = () => {
             </div>
           );
         })}
+      </div>
+      <div className={styles.footer}>
+        <div className={styles.left}>
+          <div />
+          <p>Ekene Uzomiachi</p>
+          <Icon name="caret" />
+        </div>
+        <p>Wednesday, Apr. 25</p>
       </div>
     </div>
   );
