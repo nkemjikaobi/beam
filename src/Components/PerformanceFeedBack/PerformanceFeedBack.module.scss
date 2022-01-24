@@ -144,6 +144,7 @@
         }
         
         .item {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -168,6 +169,32 @@
                 display: flex;
                 p{
                     margin-right: 0.5rem;
+                }
+            }
+            .average {
+                position: absolute;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                right: to-rem(20);
+                top: to-rem(20);
+                width: 5rem;
+                height: 2.5rem;
+                border-radius: to-rem(7);
+                align-items: end;
+                justify-content: center;
+                border: to-rem(5) solid #FFFFFF;
+
+                p{
+                    color: #5F5F8C;
+                    font-size: to-rem(14);
+                    margin-bottom: 0.1rem;
+                }
+                p:last-child{
+                    text-align: right;
+                    font-size: to-rem(13);
+                    font-weight: $font-weight-bold;
+                    color: color(Black);
                 }
             }
         }

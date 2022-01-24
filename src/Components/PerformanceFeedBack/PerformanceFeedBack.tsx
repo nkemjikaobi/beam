@@ -108,6 +108,12 @@ const PerformanceFeedBack = () => {
                   border: `3px solid ${data.backgroundColor}`,
                 }}
               >
+                {data.id === 2 && (
+                  <div className={styles.average}>
+                    <p>April 2020</p>
+                    <p>3.5</p>
+                  </div>
+                )}
                 <div>
                   <Icon name={data.firstIcon} />
                   <p>{data.firstText}</p>
