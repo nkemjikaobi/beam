@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "./PerformanceFeedBack.module.scss";
 import TextField from "@mui/material/TextField";
+import { PerformanceData } from "../../Constants";
+import IPerformance from "../../dto/IPerformance";
+import Icon from "../Icons/icon";
 
 const PerformanceFeedBack = () => {
   return (
@@ -21,6 +24,30 @@ const PerformanceFeedBack = () => {
         </div>
       </div>
       <hr />
+      <div className={styles.body}>
+        {PerformanceData.map((data: IPerformance) => {
+          return (
+            <div
+              className={styles.item}
+              key={data.id}
+              style={{
+                backgroundColor: `${data.backgroundColor}`,
+                color: `${data.textColor}`,
+                border: `3px solid ${data.backgroundColor}`,
+              }}
+            >
+              <div>
+                <Icon name={data.firstIcon} />
+                <p>{data.firstText}</p>
+              </div>
+              <div>
+                <Icon name={data.secondIcon} />
+                <p>{data.secondText}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
