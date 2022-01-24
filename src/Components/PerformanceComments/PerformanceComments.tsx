@@ -15,8 +15,10 @@ const PerformanceComments = () => {
         <div className={styles.header__right}>
           <p>3.5</p>
           <p>Exceeded expectations</p>
-          <Icon name="greenIndicator" />
-          <p>3.5%</p>
+          <div className={styles.last}>
+            <Icon name="greenIndicator" />
+            <p>3.5%</p>
+          </div>
         </div>
       </div>
       <div className={styles.body}>

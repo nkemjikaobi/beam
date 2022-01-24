@@ -1,6 +1,6 @@
 @import '../../Assets//styles/shared-styles.scss';
 .wrapper {
-    border: 1px solid #c2c2c7;
+    border: 1px solid #EDEDF2;
     width: to-rem(513);
     border-radius: to-rem(5);
     display: flex;
@@ -18,11 +18,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgb(206, 203, 203);
+        background: #F6F6F8;
         border-radius: to-rem(7);
-        padding : 1rem;
         width: to-rem(454);
         height: to-rem(48);
+        padding-left: 0.5rem;
         @include breakpoint("m"){
             width: 90%;
         }
@@ -40,16 +40,22 @@
             align-items: center;
             background-color: color(White);
             height: to-rem(40);
-            padding: 0.7rem;
             border-radius: to-rem(7);
+            margin-right: 0.5rem;
+            width: to-rem(265);
             p:first-child {
                 font-weight: $font-weight-bold;
             }
             p{
-                color: gray;
+                color: #1E1E2F;
             }
-            p:last-child {
-                color: #1A9E68;
+            .last {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p{
+                    color: #1A9E68;
+                }
             }
         }
     }
@@ -59,7 +65,7 @@
             h6 {
                 text-align: left;
                 font-size: to-rem(15);
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
                 @include breakpoint("s"){
                     margin-bottom: 1rem;
                 }
@@ -67,6 +73,7 @@
             p {
                 color: #5F5F8C;
                 margin-bottom: 1.5rem;
+                font-size: to-rem(14);
                 @include breakpoint("s"){
                     font-size: to-rem(13);
                 }
@@ -78,8 +85,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 1.5rem;
-        padding: 0.5rem;
         .left {
             display: flex;
             align-items: center;

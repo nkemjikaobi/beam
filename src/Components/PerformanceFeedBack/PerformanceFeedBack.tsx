@@ -5,9 +5,10 @@ import IPerformance from "../../dto/IPerformance";
 import Icon from "../Icons/icon";
 import CustomDatePicker from "../CustomDatePicker/CustomDatePicker";
 import CurrentYear from "../CurrentYear/CurrentYear";
+import useClickOutside from "../../CustomHooks/useClickOutSide";
 
 const PerformanceFeedBack = () => {
-  const [showDropDown, setShowDropDown] = useState(true);
+  const [showDropDown, setShowDropDown] = useState(false);
   const [currentYear, setCurrentYear] = useState<number>();
   const [length, setLength] = useState<number>(0);
   const [yearsToShow, setYearsToShow] = useState<Array<any>>([]);
@@ -31,7 +32,10 @@ const PerformanceFeedBack = () => {
     }
   };
 
-  const monthData = ["January", "Feb", "March", "Apr"];
+  const monthData = ["January", "February", "March", "April"];
+  const dropdownNode = useClickOutside(() => {
+    setShowDropDown(false);
+  });
 
   useEffect(() => {
     let mounted = true;
@@ -57,7 +61,11 @@ const PerformanceFeedBack = () => {
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <p>Your performance feedback</p>
-        <div className={styles.date}>
+        <div
+          className={styles.date}
+          onClick={() => setShowDropDown(!showDropDown)}
+          ref={dropdownNode}
+        >
           <p>April 2020</p>
           <Icon name="arrowDown" />
         </div>
