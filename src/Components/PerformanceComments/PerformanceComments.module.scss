@@ -48,6 +48,9 @@
             }
             p{
                 color: #1E1E2F;
+                @include breakpoint("s"){
+                    font-size: to-rem(13);
+                }
             }
             .last {
                 display: flex;
@@ -93,6 +96,9 @@
             border: 1px solid #CECEDE;
             width: to-rem(208);
             height: to-rem(56);
+            @include breakpoint("s"){
+                width: 11rem;
+            }
 
             div {
                 width: to-rem(40);

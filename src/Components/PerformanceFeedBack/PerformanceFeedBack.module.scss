@@ -48,6 +48,7 @@
         }
         @include breakpoint("s"){
             flex-direction: row;
+            align-items: baseline;
         }
     }
     .dropdown {
@@ -85,6 +86,7 @@
     margin-bottom: to-rem(-20);
     @include breakpoint("s"){
         width: 90%;
+        margin-bottom: to-rem(1);
     }
     p{
         font-style: normal;
@@ -95,6 +97,11 @@
         display: inline-block;
         margin-left: to-rem(30);
         margin-right: to-rem(20);
+    }
+    @include breakpoint("s"){
+        svg {
+            width: 55%;
+        }
     }
 }
     .bodyWrapper{
